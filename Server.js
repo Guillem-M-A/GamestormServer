@@ -26,16 +26,16 @@ connection.connect(function(err) {
     }
     console.log('Connected successfully.');
 });
-const {crearConfigBaseDades} = require('./src/app/db.config');
+const {crearConfigBaseDades} = require('app/db.config.js');
 
 
 const db = crearConfigBaseDades();
-const {getModelCity} = require('./src/app/models/city.model');
+const {getModelCity} = require('./app/models/city.model');
 
 const City = getModelCity(db);
-const {getModelCountry} = require('./src/app/models/country.model');
+const {getModelCountry} = require('./app/models/country.model');
 const Country = getModelCountry(db);
-const initmodels = require('./models/init-models');
+const initmodels = require('models/init-models');
 const {Sequelize} = require("sequelize");
 const {dept, doctor, empleat, hospital, malalt, plantilla, sala} = initmodels(db);
 
