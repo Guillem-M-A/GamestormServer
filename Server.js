@@ -7,9 +7,11 @@ const connection = mysql.createConnection({
     password: 'patata',
     database: 'projecteahiramguilleene'
 });
-const app = require('express')();
 
 let express = require('express');
+const app = express();
+const path = require('path')
+
 app.use(express.json());
 const cors = require('cors');
 app.use(cors());
@@ -35,6 +37,11 @@ const {getModelCity} = require('./app/models/city.model');
 const initmodels = require('models/init-models');
 const {Sequelize} = require("sequelize");
 const {usuari, productos, datos_de_compra} = initmodels(db);
+
+
+
+// conexio imatges
+app.use('/img', express.static(path.join(__dirname, 'assets/img')));
 
 
 db.sync().then(() => {
