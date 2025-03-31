@@ -28,13 +28,12 @@ connection.connect(function(err) {
     }
     console.log('Connected successfully.');
 });
-const {crearConfigBaseDades} = require('app/db.config.js');
+const {crearConfigBaseDades} = require('./db.config.js');
 
 
 const db = crearConfigBaseDades();
-const {getModelCity} = require('./app/models/city.model');
 
-const initmodels = require('models/init-models');
+const initmodels = require('./models/init-models');
 const {Sequelize} = require("sequelize");
 const {usuari, productos, datos_de_compra} = initmodels(db);
 
