@@ -52,7 +52,8 @@ db.sync().then(() => {
 
 //Fitxers
 app.post('/registreUsuariFitxer', (req,res)=>{
-    const nomFitxer=req.body.nomFitxer
-    fs.writeFileSync("C:\\Users\\alum-01\\Desktop\\ProjecteA4GuillemAhiramEneritz2024-2025\\"+ nomFitxer,req.body.message)
+
+    const nomFitxer=req.body.email+"_resgistre_"+date()
+    fs.writeFileSync("C:\\Users\\alum-01\\Desktop\\ProjecteA4GuillemAhiramEneritz2024-2025\\"+ nomFitxer,req.body.email + req.body.password)
 });
 
