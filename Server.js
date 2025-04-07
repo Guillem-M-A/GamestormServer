@@ -16,6 +16,8 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
+const fs= require('fs')
+
 app.listen(port, () => {
     console.log(`Servidor iniciat a ${port}`);
 });
@@ -45,5 +47,12 @@ app.use('/img', express.static(path.join(__dirname, 'assets/img')));
 
 db.sync().then(() => {
     console.log('Drop and re-sync db.');
+});
+
+
+//Fitxers
+app.post('/registreUsuariFitxer', (req,res)=>{
+    const nomFitxer=req.body.nomFitxer
+    fs.writeFileSync("C:\\Users\\alum-01\\Desktop\\ProjecteA4GuillemAhiramEneritz2024-2025\\"+ nomFitxer,req.body.message)
 });
 
