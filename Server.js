@@ -37,6 +37,7 @@ const db = crearConfigBaseDades();
 
 const initmodels = require('./models/init-models');
 const {Sequelize} = require("sequelize");
+const {now} = require("sequelize/lib/utils");
 const {usuari, productos, datos_de_compra} = initmodels(db);
 
 
@@ -52,8 +53,9 @@ db.sync().then(() => {
 
 //Fitxers
 app.post('/registreUsuariFitxer', (req,res)=>{
-
-    const nomFitxer=req.body.email+"_resgistre_"+date()
+    console.log("Usuari registrat")
+    console.log(req.body.email,req.body.password)
+    const nomFitxer=req.body.email+"_resgistre_"+Date.now().toString()+'.log';
     fs.writeFileSync("C:\\Users\\alum-01\\Desktop\\ProjecteA4GuillemAhiramEneritz2024-2025\\"+ nomFitxer,req.body.email + req.body.password)
 });
 
