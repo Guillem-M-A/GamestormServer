@@ -25,19 +25,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    'codigo postal': {
+    codigo_postal: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    'metodo de pago': {
+    metodo_de_pago: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    'numero tarjeta': {
+    numero_tarjeta: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    'fecha de caducidad': {
+    fecha_de_caducidad: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -62,11 +62,11 @@ module.exports = function(sequelize, DataTypes) {
         key: 'idProducto'
       }
     },
-    'discount code': {
+    discount_code: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    'importe total': {
+    importe_total: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
